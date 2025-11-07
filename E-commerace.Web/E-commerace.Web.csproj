@@ -17,6 +17,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\E-commerace.Persistence\E-commerace.Persistence.csproj" />
+    <ProjectReference Include="..\E-commerace.Presentation.Api\E-commerace.Presentation.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 
 </Project>
