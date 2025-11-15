@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9 d17.14
+VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-commerace.Web", "E-commerace.Web\E-commerace.Web.csproj", "{5AF3A603-2CF4-4320-86BF-557FCBBDF3D1}"
 EndProject
@@ -20,6 +20,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-commerace.Services", "E-c
 	ProjectSection(ProjectDependencies) = postProject
 		{5098D9BF-677A-41CA-BAC5-C8A79B686C08} = {5098D9BF-677A-41CA-BAC5-C8A79B686C08}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-commerace.Services.Abstraction", "E-commerace.Services.Abstraction\E-commerace.Services.Abstraction.csproj", "{857827D3-BAEF-4FCC-B2A3-89D8457FE941}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-commerace.Shared", "E-commerace.Shared\E-commerace.Shared.csproj", "{41D2D0CF-79CF-4115-8F63-E1976C79B7EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-commerace.Presentation.Api", "E-commerace.Presentation.Api\E-commerace.Presentation.Api.csproj", "{97197E56-478D-40A3-BE6F-1181E8DBB24A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +49,18 @@ Global
 		{3BE9EAF6-91A0-46D0-B980-0B254C62DEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BE9EAF6-91A0-46D0-B980-0B254C62DEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BE9EAF6-91A0-46D0-B980-0B254C62DEC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{857827D3-BAEF-4FCC-B2A3-89D8457FE941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{857827D3-BAEF-4FCC-B2A3-89D8457FE941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{857827D3-BAEF-4FCC-B2A3-89D8457FE941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{857827D3-BAEF-4FCC-B2A3-89D8457FE941}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41D2D0CF-79CF-4115-8F63-E1976C79B7EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41D2D0CF-79CF-4115-8F63-E1976C79B7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41D2D0CF-79CF-4115-8F63-E1976C79B7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41D2D0CF-79CF-4115-8F63-E1976C79B7EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97197E56-478D-40A3-BE6F-1181E8DBB24A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97197E56-478D-40A3-BE6F-1181E8DBB24A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97197E56-478D-40A3-BE6F-1181E8DBB24A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97197E56-478D-40A3-BE6F-1181E8DBB24A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +69,9 @@ Global
 		{5098D9BF-677A-41CA-BAC5-C8A79B686C08} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{647C34E5-82CF-4964-89EA-3C479D53F2AE} = {161F47F6-673B-4C93-BA8D-E46040758C2E}
 		{3BE9EAF6-91A0-46D0-B980-0B254C62DEC3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{857827D3-BAEF-4FCC-B2A3-89D8457FE941} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{41D2D0CF-79CF-4115-8F63-E1976C79B7EF} = {161F47F6-673B-4C93-BA8D-E46040758C2E}
+		{97197E56-478D-40A3-BE6F-1181E8DBB24A} = {161F47F6-673B-4C93-BA8D-E46040758C2E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0EAE036E-5668-4F10-8747-B8416E573D55}

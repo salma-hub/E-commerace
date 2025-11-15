@@ -8,9 +8,11 @@ namespace E_commerace.Domain.Entities.Products
 {
     public class Product: Entity<int>
     {
-     public   string Name { get; set; }
+        public string? PictureUrl;
+
+        public   string Name { get; set; }
         public string Description { get; set; }
-        public string PictureURL { get; set; }
+        public string? PictureURL { get; set; }
         public decimal Price { get; set; }
 
         public ProductBrand ProductBrand { get; set; }

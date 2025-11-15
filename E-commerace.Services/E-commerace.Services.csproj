@@ -9,6 +9,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\E-Commerace.Domain\E-commerace.Domain.csproj" />
+    <ProjectReference Include="..\E-commerace.Services.Abstraction\E-commerace.Services.Abstraction.csproj" />
+    <ProjectReference Include="..\E-commerace.Shared\E-commerace.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
   </ItemGroup>
 
 </Project>

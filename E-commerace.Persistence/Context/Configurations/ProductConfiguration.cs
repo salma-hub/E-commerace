@@ -12,17 +12,13 @@ namespace E_commerace.Persistence.Configurations
     {
         public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Product> builder)
         {
-           builder.Property(p => p.Name)
-               
-                .HasMaxLength(100);
+            builder.Property(p => p.Name)
+                 .HasColumnType("varchar").HasMaxLength(100);
             builder.Property(p => p.Description)
-               
-                .HasMaxLength(500);
+                 .HasColumnType("varchar").HasMaxLength(500);
             builder.Property(p => p.PictureURL)
-              
-               .HasMaxLength(500);
-
-                       
+                .HasColumnType("varchar").HasMaxLength(100);
+                       builder.Property(p => p.Price).HasColumnName("decimal(10,2)");
             builder.HasOne(p=>p.ProductBrand)
                 .WithMany()
                 .HasForeignKey(p=>p.BrandID);

@@ -9,8 +9,7 @@ namespace E_commerace.Persistence.Configurations
         {
             builder
                 .Property(b => b.Name)            // optional: make column NOT NULL
-              
-                .HasMaxLength(100);
+                .HasColumnType("varchar").HasMaxLength(100);
         }
     }
 }

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E_commerace.Domain.Entities.Products
+namespace E_Commerace.Domain.Contracts
 {
-    public abstract class Entity<T>
+    public  interface IDbInitializer
     {
-       public  T Id {get;  set;}
+        void Initialize();
     }
 }

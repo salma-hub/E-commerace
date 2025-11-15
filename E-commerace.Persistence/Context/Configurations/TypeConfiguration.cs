@@ -14,8 +14,7 @@ namespace E_commerace.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<ProductType> builder)
         {
-            builder.Property(t => t.Name)
-                .HasMaxLength(100);
+            builder.Property(t => t.Name).HasColumnType("varchar").HasMaxLength(100);
         }
     }
 }
