@@ -12,7 +12,9 @@ namespace E_Commerace.Domain.Contracts
         void Add(TEntity entity);
         void Update(TEntity entity);
         void Delete(TEntity entity);
-        Task <TEntity> GetById(TKey id);
+        Task <TEntity> GetByIdAsync(TKey id);
+        Task<TEntity> GetAsync(IBaseSpecification<TEntity> specification);
         Task <IEnumerable<TEntity>> GetAll();
+        Task<IEnumerable<TEntity>> GetAll(IBaseSpecification<TEntity> specification);
     }
 }

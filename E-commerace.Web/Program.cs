@@ -1,12 +1,16 @@
 
+using E_commerace.Domain.Entities.Products;
 using E_commerace.Persistence.Context;
 using E_commerace.Persistence.DbInitailzers;
 using E_commerace.Persistence.Repoestories;
 using E_commerace.Services.Abstraction.I;
 using E_commerace.Services.MappingProfile;
+using E_commerace.Services.Sepecification;
 using E_commerace.Services.Services;
 using E_Commerace.Domain.Contracts;
+
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace E_commerace.Web
 {
@@ -25,11 +29,14 @@ namespace E_commerace.Web
             builder.Services.AddScoped<IDbInitializer, DbInitializer>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<IProductService, ProductService>();
+        //    builder.Services.AddScoped<IBaseSpecification<TEntity>, BaseSecficiation<>();
             builder.Services.AddDbContext<StoreDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
             });
-            builder.Services.AddAutoMapper(x => x.AddProfile(new ProductProfile()));
+          builder.Services.AddAutoMapper(x => x.AddProfile(new ProductProfile(builder.Configuration)));
+       //  builder.Services.AddAutoMapper(typeof(ProductProfile));
+
             using var scope = builder.Services.BuildServiceProvider().CreateScope();
             var initializer = scope.ServiceProvider.GetRequiredService<IDbInitializer>();
             initializer.Initialize();

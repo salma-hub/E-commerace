@@ -9,7 +9,7 @@ namespace E_commerace.Services.Abstraction.I
 {
     public interface IProductService
     {
-        Task<IEnumerable<ProductDto>> GetProductsAsync();
+        Task<IEnumerable<ProductDto>> GetProductsAsync(ProductQueryParameters productQuery);
         Task<IEnumerable<TypeDto>> GetTypesAsync();
         Task<IEnumerable<BrandDto>> GetBrandsAsync();
         Task<ProductDto> GetProductByIdAsync(int id);

@@ -27,10 +27,10 @@ namespace E_commerace.Presentation.Api.Controller
 
             return Ok(product);
         }
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductDto>>> GetProductsAsync()
+        [HttpPost]
+        public async Task<ActionResult<IEnumerable<ProductDto>>> GetProductsAsync(ProductQueryParameters productQuery)
         {
-            var products = await productService.GetProductsAsync();
+            var products = await productService.GetProductsAsync(productQuery);
 
             return Ok(products);
         }
