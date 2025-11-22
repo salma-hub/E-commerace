@@ -16,5 +16,7 @@ namespace E_Commerace.Domain.Contracts
         Task<TEntity> GetAsync(IBaseSpecification<TEntity> specification);
         Task <IEnumerable<TEntity>> GetAll();
         Task<IEnumerable<TEntity>> GetAll(IBaseSpecification<TEntity> specification);
+        Task<int> CountAsync(IBaseSpecification<TEntity> specification);
+
     }
 }

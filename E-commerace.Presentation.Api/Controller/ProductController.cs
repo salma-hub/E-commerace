@@ -27,8 +27,8 @@ namespace E_commerace.Presentation.Api.Controller
 
             return Ok(product);
         }
-        [HttpPost]
-        public async Task<ActionResult<IEnumerable<ProductDto>>> GetProductsAsync(ProductQueryParameters productQuery)
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ProductDto>>> GetProductsAsync([FromQuery]ProductQueryParameters productQuery)
         {
             var products = await productService.GetProductsAsync(productQuery);
 

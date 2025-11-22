@@ -16,6 +16,10 @@ namespace E_commerace.Persistence.Repoestories
         private readonly DbSet<TEntity> _dbSet = storeDbContext.Set<TEntity>();
         public void Add(TEntity entity)
        =>storeDbContext.Set<TEntity>().Add(entity);
+
+        public async Task<int> CountAsync(IBaseSpecification<TEntity> specification)
+        => await _dbSet.ApplySepcification(specification).CountAsync();
+
         public void Delete(TEntity entity)
        => storeDbContext.Set<TEntity>().Remove(entity);
         public async Task<IEnumerable<TEntity>> GetAll()
