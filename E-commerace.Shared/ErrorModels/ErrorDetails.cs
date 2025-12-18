@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace E_commerace.Shared.ErrorModels
+{
+    public class ErrorDetails
+    {
+        public ErrorDetails() { }
+        public ErrorDetails(int statusCode,string message) {
+            StatusCode = statusCode;
+            Message = message;
+        }
+        public int StatusCode { get; set; }
+        public string Message { get; set; } = string.Empty;
+    }
+}
