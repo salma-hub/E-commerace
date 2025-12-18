@@ -1,6 +1,7 @@
 ﻿using E_commerace.Domain.Entities.Products;
 using E_commerace.Persistence.Context;
 using E_Commerace.Domain.Contracts;
+using E_Commerace.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace E_commerace.Persistence.Repoestories
 {
-    public class Repoestory<TEntity, TKey>(StoreDbContext storeDbContext) :IRepoestories <TEntity, TKey> where TEntity : Entity<TKey>
+    public class Repository<TEntity, TKey>(StoreDbContext storeDbContext) :IRepoestories <TEntity, TKey> where TEntity : BaseEntity<TKey>
     {
         private readonly DbSet<TEntity> _dbSet = storeDbContext.Set<TEntity>();
         public void Add(TEntity entity)

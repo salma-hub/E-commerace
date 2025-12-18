@@ -1,6 +1,10 @@
 ﻿using E_commerace.Domain.Entities.Products;
 using E_commerace.Persistence.Context;
+using E_commerace.Persistence.Identity.Context;
 using E_Commerace.Domain.Contracts;
+using E_Commerace.Domain.Entities.Identity;
+using E_Commerace.Domain.Entities.Orders;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,7 +15,14 @@ using System.Threading.Tasks;
 
 namespace E_commerace.Persistence.DbInitailzers
 {
-    public class DbInitializer(StoreDbContext storeDbContext) : IDbInitializer
+    public class DbInitializer(StoreDbContext storeDbContext, 
+        AppIdentityDbContext appIdentityDbContext,
+        UserManager<AppUser> userManager,
+        RoleManager<IdentityRole> roleManager
+
+
+
+        ) : IDbInitializer
     {
         public void Initialize()
         {
@@ -50,7 +61,78 @@ namespace E_commerace.Persistence.DbInitailzers
 
                 }
             }
-            storeDbContext.SaveChanges();
+
+                if (!storeDbContext.DeliveryMethods.Any())
+                {
+                    var deliveryMethods = File.ReadAllText(@"D:\C#\API\E-commerace\E-commerace.Persistence\Context\DataSeed\JSONFiles\delivery.json");
+                    var deliveryMethodList = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryMethods, options);
+                    if (deliveryMethodList is not null && deliveryMethodList.Count > 0)
+                    {
+                        storeDbContext.DeliveryMethods.AddRange(deliveryMethodList);
+
+                    }
+                }
+                storeDbContext.SaveChanges();
+        }
+
+       public async Task  IdentityInitialize()
+        {
+            appIdentityDbContext.Database.Migrate();
+            try
+            {
+                bool HasUsers = userManager.Users.Any();
+                bool HasRoles = roleManager.Roles.Any();
+             
+                if (!HasRoles)
+                {
+                    var Roles = new List<IdentityRole>()
+                {
+                    new IdentityRole(){Name = "SuperAdmin"},
+                    new IdentityRole(){Name = "Admin"}
+                };
+
+                    foreach (var Role in Roles)
+                    {
+                        if (!roleManager.RoleExistsAsync(Role.Name!).Result)
+                        {
+                          await  roleManager.CreateAsync(Role);
+                        }
+                    }
+                }
+                // ---------- USER ----------
+                if (!HasUsers)
+                {
+                    var MainAdmin = new AppUser()
+                    {
+                        DisplayName = "Aliaa Tarek",
+                        UserName = "AliaaTarek",
+                        Email = "Aliaatarek@gmail.com",
+                        PhoneNumber = "01123652635"
+                    };
+
+                 await    userManager.CreateAsync(MainAdmin, "P@ssw0rd");
+                  await   userManager.AddToRoleAsync(MainAdmin, "SuperAdmin");
+
+                    var Admin01 = new AppUser()
+                    {
+                        DisplayName = "Omar Mohamed",
+                        UserName = "OmarMohamed",
+                        Email = "OmarMohamed@gmail.com",
+                        PhoneNumber = "01232589652"
+                    };
+
+                 await    userManager.CreateAsync(Admin01, "P@ssw0rd");
+                 await    userManager.AddToRoleAsync(Admin01, "Admin");
+                
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Seeding Failed : {ex}");
+
+            }
+        }
+            
+            
         }
     }
-}

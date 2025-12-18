@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E_commerace.Domain.Entities.Products
+namespace E_Commerace.Domain.Entities.Orders
 {
-    public abstract class Entity<T>
+    public abstract class BaseEntity<T>
     {
-       public  T Id {get;  set;}
+        public T Id { get; set; }
     }
 }

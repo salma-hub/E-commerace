@@ -9,5 +9,6 @@ namespace E_Commerace.Domain.Contracts
     public  interface IDbInitializer
     {
         void Initialize();
+       Task  IdentityInitialize();
     }
 }

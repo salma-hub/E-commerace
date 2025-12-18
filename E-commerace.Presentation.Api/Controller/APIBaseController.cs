@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 namespace E_commerace.Presentation.Api.Controller
 {
     [ApiController]
+
     [Route("api/[controller]/[action]")]
+    [Cache(1000)]
+
     public class APIBaseController : ControllerBase
     {
     }

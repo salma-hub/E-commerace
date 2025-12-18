@@ -5,6 +5,7 @@ using E_commerace.Services.Sepecification;
 using E_commerace.Shared;
 using E_commerace.Shared.Dtos.Products;
 using E_Commerace.Domain.Contracts;
+using E_Commerace.Domain.Exception.NotFound;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace E_commerace.Services.Services
         {
             var specs = new ProductWithTypeAndSepecification(id);
             var product = await unitOfWork.GetRepository<Product, int>().GetAsync(specs);
-
+            if (product is null)  throw  new ProductNotFoundException(id);
             return mapper.Map<ProductDto>(product);
         }
 

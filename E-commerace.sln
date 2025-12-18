@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-commerace.Web", "E-commerace.Web\E-commerace.Web.csproj", "{5AF3A603-2CF4-4320-86BF-557FCBBDF3D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-commerace.Domain", "E-Commerace.Domain\E-commerace.Domain.csproj", "{5098D9BF-677A-41CA-BAC5-C8A79B686C08}"
+	ProjectSection(ProjectDependencies) = postProject
+		{41D2D0CF-79CF-4115-8F63-E1976C79B7EF} = {41D2D0CF-79CF-4115-8F63-E1976C79B7EF}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject

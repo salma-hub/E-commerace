@@ -8,10 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controller\NewFolder\**" />
+    <EmbeddedResource Remove="Controller\NewFolder\**" />
+    <None Remove="Controller\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\E-Commerace.Domain\E-commerace.Domain.csproj" />
     <ProjectReference Include="..\E-commerace.Services.Abstraction\E-commerace.Services.Abstraction.csproj" />
   </ItemGroup>
 
