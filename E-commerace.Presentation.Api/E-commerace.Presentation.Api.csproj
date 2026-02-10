@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>E_commerace.Presentation.Api</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controller\NewFolder\**" />
+    <EmbeddedResource Remove="Controller\NewFolder\**" />
+    <None Remove="Controller\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\E-Commerace.Domain\E-commerace.Domain.csproj" />
+    <ProjectReference Include="..\E-commerace.Services.Abstraction\E-commerace.Services.Abstraction.csproj" />
+  </ItemGroup>
+
+</Project>

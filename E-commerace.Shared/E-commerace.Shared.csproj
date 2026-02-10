@@ -1,0 +1,89 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>E_commerace.Shared</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Dtos\NewFolder1\**" />
+    <Compile Remove="Dtos\NewFolder2\**" />
+    <Compile Remove="Dtos\NewFolder\**" />
+    <Compile Remove="Dtos\Products\NewFolder\**" />
+    <EmbeddedResource Remove="Dtos\NewFolder1\**" />
+    <EmbeddedResource Remove="Dtos\NewFolder2\**" />
+    <EmbeddedResource Remove="Dtos\NewFolder\**" />
+    <EmbeddedResource Remove="Dtos\Products\NewFolder\**" />
+    <None Remove="Dtos\NewFolder1\**" />
+    <None Remove="Dtos\NewFolder2\**" />
+    <None Remove="Dtos\NewFolder\**" />
+    <None Remove="Dtos\Products\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Dtos\Orderresponse.cs" />
+    <Compile Remove="Dtos\ShippingAddressDto.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Dtos\Orders\wwwroot\ProductsImages\CasualSneakers.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Dtos\Orders\wwwroot\ProductsImages\ClassicBlackDressPants.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Dtos\Orders\wwwroot\ProductsImages\ClassicWhiteTShirt.jpeg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Dtos\Orders\wwwroot\ProductsImages\CottonHoodie.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Dtos\Orders\wwwroot\ProductsImages\DenimJacket.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Dtos\Orders\wwwroot\ProductsImages\FormalBlazer.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Dtos\Orders\wwwroot\ProductsImages\KnittedSweater.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Dtos\Orders\wwwroot\ProductsImages\MensLeatherJacket.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Dtos\Orders\wwwroot\ProductsImages\MensPoloShirt.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Dtos\Orders\wwwroot\ProductsImages\SlimFitJeans.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Dtos\Orders\wwwroot\ProductsImages\SummerFloralDress.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Dtos\Orders\wwwroot\ProductsImages\WomensTrenchCoat.jpeg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Dtos\Orders\wwwroot\ProductsImages\WoolScarf.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+  </ItemGroup>
+
+</Project>
